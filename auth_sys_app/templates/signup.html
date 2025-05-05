@@ -1,0 +1,22 @@
+<center>
+<h2>
+    Signup
+</h2>
+<form action="" method="post">
+    {% csrf_token %}
+    <label for="ue">UserName</label><br>
+    <input type="text" name="ue" required><br>
+    <label for="em">Email</label><br>
+    <input type="email" name="em"><br>
+    <label for="pw">Password</label><br>
+    <input type="password" name="pw" required> <br>
+    <label for="pw2">Confirm Password"</label><br>
+    <input type="password" name="pw2" required><br>
+    <input type="submit"  value="Signup">     <br>
+</form>
+<p>Already have an account? <a href="{% url 'signin' %}">Login</a></p>
+
+{% if message %}
+    <h3 style="color: red;">{{message}}</h3>
+{% endif %}
+</center>

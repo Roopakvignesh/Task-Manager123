@@ -1,0 +1,18 @@
+
+<center>
+<h2>
+    Signin
+</h2>
+<form action="" method="post">
+    {% csrf_token %}
+    <label for="ue">UserName</label><br>
+    <input type="text" name="ue" required><br>
+
+    <label for="pw">Password</label><br>
+    <input type="password" name="pw" required> <br>
+
+    <input type="submit"  value="Signin">     <br>
+</form>
+<p>Don't have an account? <a href="{% url 'signup' %}">Signup</a></p>
+<h3 style="color: red;">{{message}}</h3>
+</center>

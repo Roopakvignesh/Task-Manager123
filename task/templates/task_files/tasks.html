@@ -1,0 +1,11 @@
+{% extends 'main.html' %} {% block content %}
+<h1>Hello {{user.username}}</h1><h3><a href="{% url 'signout' %}">Logout</a></h3>
+{% include 'form.html' %}
+{% for task in tasks %}
+<div class=" task-container mb-3 p-3 shadow rounded bg-body secondary text-dark fs-5 fw-bold bg-body mb-5 ">
+  <h3>{{task.title}}</h3>
+  <p>{{task.desc}}</p>
+  <a class="btn btn-primary btn-sm mb-3 " href="{% url 'update' task.id %}">Edit</a>
+  <a class="btn btn-danger btn-sm mb-3  " href="{% url 'delete' task.id %}">Delete</a>
+</div>
+{% endfor %} {% endblock content %}

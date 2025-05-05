@@ -1,0 +1,10 @@
+
+<p  class="text-center fw-bold fs-3 text-danger fw-bold mb-3 " style="color: red;">{{message}}</p>
+
+<form action="" method="post" class="form mt-3 w-50 mx-auto text-center bg-light p-3 rounded shadow text-dark fs-5 fw-bold bg-body mb-5">{% csrf_token %}
+    <label for="title" class="form-label">Title</label><br>
+    <input type="text" name="title" value="{{task.title}}" placeholder="Enter the title" class="form-control mb-3 "><br>
+    <label for="description" class="form-label">Description</label><br>
+    <input type="text" name="desc" value="{{task.desc}}" placeholder="Enter the description" class="form-control mb-3 p-3"><br>
+    <input  class="btn btn-primary" type="submit" value="{% if task %} Update Task{% else %} Add Task{% endif %}">
+</form>

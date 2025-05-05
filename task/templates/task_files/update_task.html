@@ -1,0 +1,12 @@
+{% extends 'main.html' %}
+{% block content %}
+<center>
+{% if message %}
+    <h2 style="color: red;">{{message}}</h2>
+{% else %}
+    <h2>UPADTE:{{task.title}}</h2>
+    {% include 'form.html' %}
+    <a href="{% url 'home' %}">Back</a>
+{% endif %}
+</center>
+{% endblock content %}
